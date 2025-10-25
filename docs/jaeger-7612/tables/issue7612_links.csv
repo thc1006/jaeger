@@ -1,0 +1,10 @@
+url,type,title,state,notes
+https://github.com/jaegertracing/jaeger/issues/7612,issue,Investigate the path to replace olivere/elastic driver,Open,Main investigation issue
+https://github.com/jaegertracing/jaeger/issues/2192,issue,Jaeger is not respecting ES_BULK_SIZE (AWS OpenSearch limit),OPEN,Triggering bug - bulk size limit not respected
+https://github.com/jaegertracing/jaeger/issues/2192#issuecomment-3435539949,issue,Comment by jstasiak on #2192,NA,Demonstrates olivere/elastic bulk processing bug
+https://github.com/olivere/elastic/pull/1661,pr,Fix: Bulk processor retries indefinitely on failure,OPEN,Attempted fix for bulk size issue - rejected (repo deprecated)
+https://github.com/jaegertracing/jaeger/blob/2c8ca4b7f39706825f3faae64686ae6ba845bc40/internal/storage/elasticsearch/config/config.go#L291,code,BulkProcessor configuration,NA,Shows how max_bytes is used with olivere/elastic
+https://github.com/olivere/elastic/blob/4cdb89f6e627228e7cb3b53e1b1ef8630cc71a0a/bulk_processor.go#L50,code,BulkProcessorService struct,NA,Defines bulkSize semantics in olivere/elastic
+https://github.com/jaegertracing/jaeger/blob/main/internal/storage/elasticsearch/client/interfaces.go,code,Storage abstraction interfaces,NA,Existing shim layer for driver abstraction
+https://docs.aws.amazon.com/opensearch-service/latest/developerguide/limits.html#network-limits,doc,AWS OpenSearch Service Limits,NA,Documents 10MB HTTP request size limit
+https://github.com/olivere/elastic,repo,olivere/elastic repository,Deprecated,The deprecated driver being replaced
